@@ -1,0 +1,117 @@
+/* Aurora Animation */
+@keyframes aurora {
+  0% {
+    background-position: 0% 50%, 100% 50%, 50% 100%;
+  }
+  50% {
+    background-position: 100% 50%, 50% 100%, 0% 50%;
+  }
+  100% {
+    background-position: 0% 50%, 100% 50%, 50% 100%;
+  }
+}
+
+/* Base Aurora Background */
+body {
+  background:
+    radial-gradient(1500px 800px at 100% -20%, rgba(134, 239, 172, 0.15) 0%, transparent 70%),
+    radial-gradient(1200px 800px at -10% 110%, rgba(125, 211, 252, 0.15) 0%, transparent 70%),
+    radial-gradient(1300px 600px at 50% 50%, rgba(167, 139, 250, 0.1) 0%, transparent 70%),
+    #f8fafc;
+  background-size: 200% 200%, 200% 200%, 200% 200%;
+  animation: aurora 15s ease infinite;
+  min-height: 100vh;
+}
+
+/* Glass Effect */
+.glass {
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.8) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 
+              0 2px 4px -1px rgba(0, 0, 0, 0.03) !important;
+}
+
+.glass-header {
+  backdrop-filter: blur(12px) !important;
+  background: rgba(255, 255, 255, 0.8) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Smooth Transitions */
+.hover-lift {
+  transition: all 0.3s ease !important;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 12px -1px rgba(0, 0, 0, 0.08), 
+              0 4px 6px -1px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Aurora Glow Effects */
+.glow-green {
+  box-shadow: 0 0 15px rgba(134, 239, 172, 0.3);
+}
+
+.glow-blue {
+  box-shadow: 0 0 15px rgba(125, 211, 252, 0.3);
+}
+
+.glow-purple {
+  box-shadow: 0 0 15px rgba(167, 139, 250, 0.3);
+}
+
+/* Button Styles */
+.btn-aurora {
+  background: linear-gradient(135deg, rgba(134, 239, 172, 0.9), rgba(125, 211, 252, 0.9));
+  color: white;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-aurora:hover {
+  background: linear-gradient(135deg, rgba(134, 239, 172, 1), rgba(125, 211, 252, 1));
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(125, 211, 252, 0.4);
+}
+
+/* Input Fields */
+.input-aurora {
+  backdrop-filter: blur(4px);
+  background: rgba(255, 255, 255, 0.9) !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  transition: all 0.3s ease;
+}
+
+.input-aurora:focus {
+  background: rgba(255, 255, 255, 0.95) !important;
+  box-shadow: 0 0 0 3px rgba(125, 211, 252, 0.3);
+  border-color: rgba(125, 211, 252, 0.5) !important;
+}
+
+/* Card Hover Effects */
+.card-aurora {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-aurora::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.card-aurora:hover::before {
+  left: 100%;
+}
